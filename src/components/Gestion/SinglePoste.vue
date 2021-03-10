@@ -15,7 +15,7 @@
       <label>Meta Description : </label>
       <input type="text" v-model="postMetaDescription" class="input"/>
       <label>Corps du post : </label>
-      <input type="text" v-model="postContent" class="input"/>
+      <textarea v-model="postContent" class="input"></textarea>
       <label>Image : </label>
       <input type="text" v-model="postImage" class="input" />
       <button class="update" @click="updatePost(post.id)">Valider les modifications</button>
@@ -62,6 +62,7 @@ export default {
             image: this.postImage
         }
         this.$store.commit('UPDATE_BLOG', {id, updatedPost})
+        alert('Vos changements ont été pris en compte !')
     },
 
     deletePost(post){

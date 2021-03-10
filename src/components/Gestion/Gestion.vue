@@ -5,8 +5,8 @@
       <input type="text" placeholder="Titre de la page" v-model="title" class="input"/>
       <input type="text" placeholder="Meta Title" v-model="metaTitle" class="input"/>
       <input type="text" placeholder="Meta Description" v-model="metaDescription" class="input"/>
-      <input type="text" placeholder="Corps du post" v-model="content" class="input"/>
-      <input type="text" placeholder="Image" v-model="image" class="input"/>
+      <textarea placeholder="Corps du post" v-model="content" class="input"></textarea>
+      <input type="text" placeholder="Image" v-model="image" class="input">
       <button class="add" @click="addPost()">Créer</button>
   </div>
   <div class="allPosts" v-for="post in allPoste" :key="post.title">

@@ -1,25 +1,21 @@
 <template>
-  <p>blog</p>
-  <div class="allPosts" v-for="post in allPoste" :key="post.title">
-    <router-link :to="{ name: 'SinglePoste', params: {id: post.id} }">
-      <div class="singlePost">
+    <p>single Blog</p>
+    <div class="post">
         <h1>{{ post.title }}</h1>
         <p>{{ post.metaTitle }}</p>
         <p>{{ post.metaDescription }}</p>
         <p>{{ post.content }}</p>
         <img :src="post.image" alt="image">
-      </div>
-    </router-link>
-  </div>
+    </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Blog',
+  name: 'SingleBlog',
   data() {
     return {
-      allPoste: this.$store.state.listBlog
+        post: this.$store.state.listBlog[this.$route.params.id]
     }
   }
 }
