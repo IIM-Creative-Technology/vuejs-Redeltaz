@@ -13,7 +13,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "gestion" */ '../components/Gestion/Gestion.vue')
+    component: () => import(/* webpackChunkName: "gestion" */ '../components/Gestion/Gestion.vue'),
+    meta: {requiresAuth: true}
   },
   {
     path: '/login',
@@ -44,6 +45,26 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if(to.meta.requiresAuth){
+    if(localStorage.getItem('connectedUser') === null){
+      alert('Vous devez être connecté en tant qu\'administrateur pour accéder à cette page!')
+      next({
+        name: "Login"
+        })
+    }else if(JSON.parse(localStorage.getItem('connectedUser')).email !== "admin"){
+      alert('Vous devez être connecté en tant qu\'administrateur pour accéder à cette page !')
+      next({
+        name: "Login"
+      })  
+    }else{
+      next()
+    }
+  }else {
+    next()
+  }
 })
 
 export default router

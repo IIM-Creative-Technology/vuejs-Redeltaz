@@ -7,6 +7,7 @@
       <input type="text" v-model="password" class="input"/>
       <button class="add" @click="connect()">Se connecter</button>
       <p>Pas encore de compte ?</p><router-link to="/register">S'inscrire</router-link>
+      <p @click="disconnect()" class="disconnect">Se déconnecter</p>
     <router-view/>
   </div>
 </template>
@@ -31,11 +32,17 @@ export default {
 
       this.email = ''
       this.password = ''
+    },
+
+    disconnect(){
+      this.$store.commit('TRY_LOGOUT')
     }
   }
 }
 </script>
 
 <style>
-
+.disconnect{
+  cursor: pointer;
+}
 </style>

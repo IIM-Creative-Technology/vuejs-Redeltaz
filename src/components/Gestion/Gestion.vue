@@ -60,10 +60,6 @@ export default {
       this.metaDescription = ''
       this.content = ''
       this.image = ''
-    },
-
-    updatePost(){
-
     }
   }
 }

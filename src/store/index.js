@@ -5,13 +5,11 @@ export default createStore({
     listBlog: [],
     listUser: [{
       email: 'admin',
-      password: 'admin',
-      isConnected: false
+      password: 'admin'
     },
     {
       email: 'lucas',
-      password: 'lucas',
-      isConnected: false
+      password: 'lucas'
     }]
   },
   mutations: {
@@ -35,7 +33,6 @@ export default createStore({
       for(let i = 0; i < state.listUser.length; i++){
         if(state.listUser[i].email === tryUser.email){
           if(state.listUser[i].password === tryUser.password){
-            state.listUser[i].isConnected = true
             alert(`Bonjour ${state.listUser[i].email}, vous êtes connecté !`)
             localStorage.setItem('connectedUser', JSON.stringify(tryUser))
             canConnect = true
@@ -67,9 +64,13 @@ export default createStore({
 
       if(canRegister){
         alert('Votre compte a bien été enregistré, vous pouvez maintenant vous connecter !')
-        newUser.isConnected = false
         state.listUser.push(newUser)
       }
+    },
+
+    TRY_LOGOUT(){
+      localStorage.clear()
+      alert('Vous venez de vous déconnecter')
     }
   },
   actions: {
