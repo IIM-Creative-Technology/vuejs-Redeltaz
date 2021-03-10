@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <router-link to="/gestion">Gérer le Blog</router-link>
+        <router-link to="/admin">Gérer le Blog</router-link>
         <router-link to="/">Blog</router-link>
         <router-link to="/login">Login</router-link>
     </nav>
