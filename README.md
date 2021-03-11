@@ -1,24 +1,15 @@
 # cms-rendu
 
-## Project setup
+Rendu CMS de la semaine Vue 
+
+Lucas Campistron IIM A2 DW1 (je suis en solo)
+
+## Installer le projet
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Lancer le projet
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

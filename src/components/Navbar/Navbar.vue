@@ -15,5 +15,14 @@ export default {
 </script>
 
 <style>
+nav{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+nav a{
+  color: black;
+}
 
 </style>

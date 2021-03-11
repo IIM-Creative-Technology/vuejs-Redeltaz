@@ -58,13 +58,13 @@ router.beforeEach((to, from, next) => {
       alert('Vous devez être connecté en tant qu\'administrateur pour accéder à cette page !')
       next({
         name: "Login"
-      })  
+      })  //vérification des données du local storage pour vérif si utilisateur connecté / utilisateur = admin
     }else{
       next()
     }
   }else {
     next()
   }
-})
+})//étapes de vérification qui s'applique à toutes les routes ayant comme param "meta: requiresAuth à true" (donc seulement la page admin)
 
 export default router
